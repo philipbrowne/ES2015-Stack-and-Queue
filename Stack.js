@@ -33,5 +33,3 @@ class Stack {
     return currentFirst.value;
   }
 }
-
-var stack = new Stack();

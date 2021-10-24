@@ -20,8 +20,7 @@ class Queue {
       this.last.next = newNode;
       this.last = newNode;
     }
-    this.size++;
-    return this;
+    return ++this.size;
   }
   dequeue() {
     if (!this.first) return null;
@@ -35,5 +34,3 @@ class Queue {
     return currentFirst.value;
   }
 }
-
-var q = new Queue();
