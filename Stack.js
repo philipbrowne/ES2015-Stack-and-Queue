@@ -19,16 +19,18 @@ class Stack {
       newNode.next = this.first;
     }
     this.first = newNode;
-    this.size++;
-    return this.size;
+    return ++this.size;
   }
   pop() {
-    if (!this.first) return undefined;
+    if (!this.first) return null;
     var currentFirst = this.first;
-    if (this.size === 0) this.last = null;
-    this.first = currentFirst.next;
+    if (this.size === 1) {
+      this.last = null;
+      this.first = null;
+    }
+    this.first = this.first.next;
     this.size--;
-    return currentFirst;
+    return currentFirst.value;
   }
 }
 
